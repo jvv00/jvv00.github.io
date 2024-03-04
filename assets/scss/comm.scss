@@ -1,2 +1,55 @@
 @charset "UFT-8";
-@import "variables", "mixin", "fonts", "reset";
+@import "variables", "mixins", "fonts", "reset";
+
+.section {
+    background-color: #ffffff; /* 배경색 설정 */
+    color: #333333; /* 텍스트 색상 설정 */
+    padding: 50px; /* 내부 여백 설정 */
+    font-family: 'Arial', sans-serif; /* 폰트 설정 */
+}
+.fp-slidesNav {
+    position: fixed; /* 고정 위치 설정 */
+    top: 50%; /* 화면 상단에서의 위치 설정 */
+    right: 20px; /* 화면 오른쪽에서의 위치 설정 */
+    transform: translateY(-50%); /* 세로 중앙 정렬 */
+}
+
+.fp-slidesNav-btn {
+    background-color: #eeeeee; /* 버튼 배경색 설정 */
+    color: #ffffff; /* 버튼 텍스트 색상 설정 */
+    width: 10px; /* 버튼 너비 설정 */
+    height: 10px; /* 버튼 높이 설정 */
+    margin: 5px; /* 버튼 간격 설정 */
+    border-radius: 50%; /* 원형 버튼으로 설정 */
+}
+
+#line1 {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    // transform: translateX(-0%);
+    transition: width 0.5s ease;
+}
+#line2 {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    // transform: translateX(-0%);
+    transition: width 0.5s ease;
+}
+#line3 {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    width: 0;
+    height: 1px;
+    background-color: white;
+    // transform: translateX(-50%);
+    transition: width 0.5s ease;
+}
