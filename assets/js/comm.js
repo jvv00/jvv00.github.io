@@ -2,22 +2,33 @@ $(document).ready(function() {
     var line1 = $("#line1");
     var line2 = $("#line2");
     var line3 = $("#line3");
+    var line4 = $("#line4");
+    var line5 = $("#line5");
 
         // 선의 초기 너비를 설정합니다. (0으로 설정하여 선이 숨겨진 상태로 시작됩니다.)
         line1.css("width", "0");
         line2.css("width", "0");
         line3.css("width", "0");
+        line4.css("width", "0");
+        line5.css("width", "0");
     
         // 선의 최종 너비를 설정합니다. (90%로 설정하여 원하는 최종 너비로 지정합니다.)
         var finalWidth = "90%";
     
         // 선의 초기 너비를 설정한 후, 잠시 후에 선의 최종 너비로 변경됩니다.
         // 첫 번째 선에 대한 애니메이션
-$("#line1").animate({width: finalWidth}, 300, function() {
+$("#line1").animate({width: finalWidth}, 200, function() {
     // 첫 번째 선의 애니메이션이 완료된 후 두 번째 선에 대한 애니메이션을 실행합니다.
-    $("#line2").animate({width: finalWidth}, 300, function() {
+    $("#line2").animate({width: finalWidth}, 200, function() {
         // 두 번째 선의 애니메이션이 완료된 후 세 번째 선에 대한 애니메이션을 실행합니다.
-        $("#line3").animate({width: finalWidth}, 300);
+        $("#line3").animate({width: finalWidth}, 200, function(){
+
+			$("#line4").animate({width: finalWidth}, 200, function(){
+				
+				$("#line5").animate({width: finalWidth}, 200)
+
+			});
+		});
     });
 });
 

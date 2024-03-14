@@ -3,7 +3,7 @@
 
 .section {
     background-color: #ffffff; /* 배경색 설정 */
-    color: #333333; /* 텍스트 색상 설정 */
+    color: #f0f0f0; /* 텍스트 색상 설정 */
     padding: 50px; /* 내부 여백 설정 */
     font-family: 'Arial', sans-serif; /* 폰트 설정 */
 }
@@ -22,34 +22,86 @@
     margin: 5px; /* 버튼 간격 설정 */
     border-radius: 50%; /* 원형 버튼으로 설정 */
 }
-
-#line1 {
+.line {
+    opacity: 0.5;
     position: absolute;
-    top: 30%;
-    left: 5%;
     width: 0;
     height: 1px;
     background-color: white;
+}
+#line1 {
+    top: 30%;
+    left: 5%;
     // transform: translateX(-0%);
     transition: width 0.5s ease;
 }
 #line2 {
-    position: absolute;
-    top: 50%;
+    top: 40%;
     left: 5%;
-    width: 0;
-    height: 1px;
-    background-color: white;
     // transform: translateX(-0%);
     transition: width 0.5s ease;
 }
 #line3 {
-    position: absolute;
-    top: 70%;
+    top: 50%;
     left: 5%;
-    width: 0;
-    height: 1px;
-    background-color: white;
     // transform: translateX(-50%);
     transition: width 0.5s ease;
+}
+#line4 {
+    top: 60%;
+    left: 5%;
+    // transform: translateX(-50%);
+    transition: width 0.5s ease;
+}
+#line5 {
+    top: 70%;
+    left: 5%;
+    // transform: translateX(-50%);
+    transition: width 0.5s ease;
+}
+#jiwoo1 {
+    top: 40%;
+    left: 20%;
+    animation-delay: 0s; 
+}
+#jiwoo2 {
+    top: 45%; 
+    left: 30%;
+    animation-delay: 0.5s;
+}
+#jiwoo3 {
+    top: 45%; 
+    left: 49%; 
+    font-size: 50px; 
+    font-weight: bold; 
+    animation-delay: 0.5s; 
+}
+#jiwoo4 {
+    top:62%;
+    left: 65%; 
+    font-family: "Abril Fatface";
+    font-size: 54px; 
+    animation-delay: 1s; 
+}
+.floating-text {
+    position: absolute;
+    font-family:"Abril Fatface";
+    font-size: 80px;
+    color: $white;
+    opacity: 0;
+    animation: floatAnimation 1s ease-in-out forwards;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0); 
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-5px); 
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
