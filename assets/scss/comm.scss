@@ -1,107 +1,99 @@
-@charset "UFT-8";
-@import "variables", "mixins", "fonts", "reset";
+@charset "UTF-8";
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "reset";
 
 .section {
-    background-color: #ffffff; /* 배경색 설정 */
-    color: #f0f0f0; /* 텍스트 색상 설정 */
-    padding: 50px; /* 내부 여백 설정 */
-    font-family: 'Arial', sans-serif; /* 폰트 설정 */
+  background-color: #111; /* 배경색 설정 */
+  // color: #f0f0f0; /* 텍스트 색상 설정 */
+  padding: 50px; /* 내부 여백 설정 */
+  font-family: 'Arial', sans-serif; /* 폰트 설정 */
 }
+
 .fp-slidesNav {
-    position: fixed; /* 고정 위치 설정 */
-    top: 50%; /* 화면 상단에서의 위치 설정 */
-    right: 20px; /* 화면 오른쪽에서의 위치 설정 */
-    transform: translateY(-50%); /* 세로 중앙 정렬 */
+  position: fixed; /* 고정 위치 설정 */
+  top: 50%; /* 화면 상단에서의 위치 설정 */
+  right: 20px; /* 화면 오른쪽에서의 위치 설정 */
+  transform: translateY(-50%); /* 세로 중앙 정렬 */
 }
 
 .fp-slidesNav-btn {
-    background-color: #eeeeee; /* 버튼 배경색 설정 */
-    color: #ffffff; /* 버튼 텍스트 색상 설정 */
-    width: 10px; /* 버튼 너비 설정 */
-    height: 10px; /* 버튼 높이 설정 */
-    margin: 5px; /* 버튼 간격 설정 */
-    border-radius: 50%; /* 원형 버튼으로 설정 */
+  background-color: #eeeeee; /* 버튼 배경색 설정 */
+  color: #ffffff; /* 버튼 텍스트 색상 설정 */
+  width: 10px; /* 버튼 너비 설정 */
+  height: 10px; /* 버튼 높이 설정 */
+  margin: 5px; /* 버튼 간격 설정 */
+  border-radius: 50%; /* 원형 버튼으로 설정 */
 }
-.line {
-    opacity: 0.5;
-    position: absolute;
-    width: 0;
-    height: 1px;
-    background-color: white;
-}
-#line1 {
-    top: 30%;
-    left: 5%;
-    // transform: translateX(-0%);
-    transition: width 0.5s ease;
-}
-#line2 {
-    top: 40%;
-    left: 5%;
-    // transform: translateX(-0%);
-    transition: width 0.5s ease;
-}
-#line3 {
-    top: 50%;
-    left: 5%;
-    // transform: translateX(-50%);
-    transition: width 0.5s ease;
-}
-#line4 {
-    top: 60%;
-    left: 5%;
-    // transform: translateX(-50%);
-    transition: width 0.5s ease;
-}
-#line5 {
-    top: 70%;
-    left: 5%;
-    // transform: translateX(-50%);
-    transition: width 0.5s ease;
-}
-#jiwoo1 {
-    top: 40%;
-    left: 20%;
-    animation-delay: 0s; 
-}
-#jiwoo2 {
-    top: 45%; 
-    left: 30%;
-    animation-delay: 0.5s;
-}
-#jiwoo3 {
-    top: 45%; 
-    left: 49%; 
-    font-size: 50px; 
-    font-weight: bold; 
-    animation-delay: 0.5s; 
-}
-#jiwoo4 {
-    top:62%;
-    left: 65%; 
-    font-family: "Abril Fatface";
-    font-size: 54px; 
-    animation-delay: 1s; 
-}
-.floating-text {
-    position: absolute;
-    font-family:"Abril Fatface";
-    font-size: 80px;
-    color: $white;
+.home_wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 25%;
+    height: 100vh;
+  }
+  
+  .grid.merged,#name2 {
+    padding: 30px 0;
+    font-size: 160px;
+    font-family: "Archivo Black";
+  }
+  
+  .text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    flex-direction: column;
+  }
+  
+  .splitting .char {
+    display: inline-block;
     opacity: 0;
-    animation: floatAnimation 1s ease-in-out forwards;
+    transform: translateY(100%);
+    transition: opacity 0.5s, transform 0.5s;
+    color: transparent;
+    background: linear-gradient(270deg, #fff, #A2AFFE);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
-@keyframes floatAnimation {
-    0% {
-        transform: translateY(0); 
+.slide-up .splitting .char {
+    animation: slide-up 0.5s forwards;
+}
+
+.slide-down .splitting .char {
+    animation: slide-down 0.5s forwards;
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
         opacity: 0;
     }
-    50% {
-        transform: translateY(-5px); 
-    }
-    100% {
+    to {
         transform: translateY(0);
         opacity: 1;
     }
 }
+
+@keyframes slide-down {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+  
+
+#job {
+  display: flex;
+  align-items: flex-end;
+  font-size: 40px;
+  padding: 10px 0;
+}
+
+

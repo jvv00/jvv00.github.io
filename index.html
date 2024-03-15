@@ -38,7 +38,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Coming+Soon&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Coming+Soon&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Sacramento&display=swap&family=Archivo+Black&display=swap" rel="stylesheet">
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -55,9 +55,11 @@
         rel="stylesheet" 
         href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css" integrity="sha512-q54FvbV+gGBn+NvgaD4gpJ7w4wrO00DgW7Rx503PIhrf0CuMwLOwbS+bXgOBFSob+6GVy1HDPfaRLJ8w2jiS4g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/comm.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" integrity="sha512-bxzECOBohzcTcWocMAlNDE2kYs0QgwGs4eD8TlAN2vfovq13kfDfp95sJSZrNpt0VMkpP93ZxLC/+WN/7Trw2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     <script defer src="./assets/js/comm.js"></script>
 </head>
 <body>
@@ -101,19 +103,45 @@
         <main id="fullpage">
             <section id="contents_00" class="section" data-anchor="first">
                 <div class="home_wrap">
-                    <div class="home_tit">
-                        <div class="lines">
-                            <div id="line1" class="line"></div>
-                            <div id="jiwoo1" class="floating-text">JI</div>
-                            <div id="line2" class="line"></div>
-                            <div id="jiwoo2" class="floating-text">WOO</div>
-                            <div id="line3" class="line"></div>
-                            <div id="jiwoo3" class="floating-text">'s</div>
-                            <div id="line4" class="line"></div>
-                            <div id="jiwoo4" class="floating-text">Portifolio</div>
-                            <div id="line5" class="line"></div>
+                    <div class="home_tit grid merged" id="name1">
+                        <div class="text portfolio">
+                            <div class="portfolio_one">
+                                <span class="splitting">Portfolio</span>
+                            </div>
+                            <div class="portfolio_two">
+                                <span class="splitting">2024</span>
+                            </div>
                         </div>
                     </div>
+                    <div class="home_tit grid" >
+                    </div>
+                    <div class="home_content grid">
+                        
+                    </div>
+                    <div class="home_content grid">
+                        
+                    </div>
+                    <div class="home_content grid" id="job">
+                        <div>frontend developer</div>
+                    </div>
+                    <div class="home_content grid" id="name2">
+                        <div class="text portfolio">
+                            <div class="portfolio_one">
+                                <span class="splitting">KIM</span>
+                            </div>
+                            <div class="portfolio_two">
+                                <span class="splitting">JI WOO</span>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="home_content grid">
+                       
+                    </div>
+                    <div class="home_content grid">
+                       
+                    </div>
+
                 </div>
             </section>
             
