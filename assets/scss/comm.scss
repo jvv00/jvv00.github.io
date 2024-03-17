@@ -3,8 +3,9 @@
 @import "mixins";
 @import "fonts";
 @import "reset";
-
 .section {
+  display: flex;
+  justify-content: center;
   background-color: #111; /* 배경색 설정 */
   // color: #f0f0f0; /* 텍스트 색상 설정 */
   padding: 50px; /* 내부 여백 설정 */
@@ -29,10 +30,13 @@
 .home_wrap {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 25%;
+    grid-template-rows: repeat(4, 25%);
+    // grid-auto-rows: 25%;
     height: 100vh;
   }
-  
+  .grid.merged {
+    grid-row: span 3;
+  }
   .grid.merged,#name2 {
     padding: 30px 0;
     font-size: 160px;
@@ -97,3 +101,21 @@
 }
 
 
+.profile_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .profile_inner {
+    width: 50%;
+    img {
+      height: 400px;
+      opacity: 0.1;
+    }
+  }
+}
+.portfolio_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
