@@ -416,19 +416,19 @@ legend {
 .intro_wrap .grid6 {
   grid-area: 3/2/5/3;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 .intro_wrap #name1,
 .intro_wrap #name2 {
-  padding: 30px 0;
+  padding: 30px;
   font-family: "Archivo Black";
-  font-size: 800%;
+  font-size: 1000%;
   white-space: nowrap;
 }
 .intro_wrap .text {
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
+  padding-left: 30px;
 }
 .intro_wrap .splitting .char {
   display: inline-block;
@@ -436,7 +436,8 @@ legend {
   transform: translateY(100%);
   transition: opacity 0.5s, transform 0.5s;
   color: transparent;
-  background: linear-gradient(270deg, #fff, #a2affe);
+  background: linear-gradient(120deg, #fff, #111);
+  background-size: 100%;
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -469,8 +470,9 @@ legend {
 .intro_wrap #job {
   display: flex;
   align-items: flex-end;
-  font-size: 40px;
+  font-size: 36px;
   padding: 10px 0 10px 50px;
+  line-height: 1.5;
 }
 
 .profile_wrap {
@@ -482,8 +484,24 @@ legend {
 .profile_wrap .profile_inner.left {
   width: 30%;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   position: relative;
+}
+.profile_wrap .profile_inner.left .tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  margin: 0 0 10px;
+  background: linear-gradient(120deg, #fff, #111);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+.profile_wrap .profile_inner.left .tag.fade-in {
+  animation: gradientAnimation 2s linear alternate;
 }
 .profile_wrap .profile_inner.left .profile_img {
   display: flex;
@@ -494,13 +512,16 @@ legend {
   max-width: 400px;
 }
 .profile_wrap .profile_inner.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 35%;
 }
 .profile_wrap .profile_inner.right .profile_depth1 {
   height: 100%;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 32px;
   padding-left: 0;
   color: #fff;
@@ -512,6 +533,7 @@ legend {
   background-repeat: no-repeat;
   background-size: 80%;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  font-size: 22px;
 }
 .profile_wrap .profile_inner.right .profile_depth1 .profile_depth2 {
   padding: 0;
@@ -587,6 +609,7 @@ legend {
 .portfolio_inner .slide-desc .fade-in {
   animation: gradientAnimation 2s linear alternate;
 }
+
 @keyframes gradientAnimation {
   0% {
     background-position: -500%;
@@ -595,7 +618,6 @@ legend {
     background-position: 0%;
   }
 }
-
 .tamburins-d::before {
   background: url(../../assets/images/slide1.jpg) no-repeat 50% 0;
 }
@@ -610,6 +632,10 @@ legend {
 
 .woori-m::before {
   background: url(../../assets/images/slide4.jpg) no-repeat 50% 0;
+}
+
+.hori::before {
+  background: url(../../assets/images/slide5.jpg) no-repeat 50% 0;
 }
 
 .slide-img {
@@ -637,10 +663,12 @@ legend {
 .portfolio_inner .slide-desc {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   z-index: 1;
   width: 30%;
   height: 80%;
   color: #fff;
+  margin-bottom: 50px;
 }
 
 .portfolio_inner .slide-desc p {
@@ -692,6 +720,53 @@ legend {
   width: 30%;
 }
 
+#contents_07 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contents_07 .thanks {
+  font-size: 1000%;
+  font-family: "Archivo Black";
+}
+#contents_07 .splitting .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s, transform 0.5s;
+  color: transparent;
+  background: linear-gradient(120deg, #fff, #111);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+#contents_07 .slide-up .splitting .char {
+  animation: slide-up 0.5s forwards;
+}
+#contents_07 .slide-down .splitting .char {
+  animation: slide-down 0.5s forwards;
+}
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
 @media (max-width: 1440px) {
   .section.profile .profile_wrap .left {
     width: 40%;
@@ -712,14 +787,14 @@ legend {
   }
   #name1,
   #name2 {
-    font-size: 500%; /* 폰트 크기 조정 */
+    font-size: 700%; /* 폰트 크기 조정 */
   }
   .text {
     padding-left: 70px; /* 텍스트 왼쪽 패딩 조정 */
     font-size: 100px;
   }
   #job {
-    font-size: 50px; /* 직업 텍스트 크기 조정 */
+    font-size: 30px; /* 직업 텍스트 크기 조정 */
   }
   .section.profile .profile_wrap {
     flex-direction: column;
